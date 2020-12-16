@@ -73,6 +73,10 @@ function get_question($questionId)
     $statement = $db->prepare($query);
     $statement->bindValue(':questionId', $questionId);
     $statement->execute();
+    $question = $statement->fetch();
     $statement->closeCursor();
+
+    return $question;
+
 }
 ?>
