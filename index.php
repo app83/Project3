@@ -108,7 +108,7 @@ switch ($action) {
         if ($userId == NULL || $userId < 0) {
             header('Location: .?action=show_login');
         } else {
-            get_question($questionId);
+            $question = get_question($questionId);
             include('views/edit_question_form.php');
         }
         break;
